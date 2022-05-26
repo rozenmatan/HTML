@@ -1,4 +1,23 @@
 <html>
-<h1>hello</h1>
-<h2>hi1</h2>
+    <head>
+        <script src="https://randojs.com/1.0.0.js"></script>
+        <script>
+            function showRandomNumber(){
+                document.getElementById("myNumber").innerHTML = "<?php 
+echo $_SERVER['SERVER_ADDR']; ?>";
+            }
+        </script>
+        <style>
+            #myNumber{
+                font-size:100px;
+                text-align:center;
+                margin:50px auto;
+                font-family:Arial, sans-serif;
+            }
+        </style>
+    </head>
+    <body onload="showRandomNumber();">
+        <h1>The random number is:</h1>
+	<div id="myNumber"></div>
+    </body>
 </html>
