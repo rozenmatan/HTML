@@ -1,23 +1,39 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <script src="https://randojs.com/1.0.0.js"></script>
-        <script>
-            function showRandomNumber(){
-                document.getElementById("myNumber").innerHTML = "<?php 
-echo $_SERVER['SERVER_ADDR']; ?>";
-            }
-        </script>
-        <style>
-            #myNumber{
-                font-size:100px;
-                text-align:center;
-                margin:50px auto;
-                font-family:Arial, sans-serif;
-            }
-        </style>
-    </head>
-    <body onload="showRandomNumber();">
-        <h1>The random number is:</h1>
-	<div id="myNumber"></div>
-    </body>
+
+<head>
+	<title>Getting Clients IP</title>
+	<style>
+	p, h1 {
+		color: green;
+	}
+	</style>
+
+	<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
+	
+	<script>
+	
+	/* Add "https://api.ipify.org?format=json" statement
+			this will communicate with the ipify servers in
+			order to retrieve the IP address $.getJSON will
+			load JSON-encoded data from the server using a
+			GET HTTP request */
+				
+	$.getJSON("https://api.ipify.org?format=json", function(data) {
+		
+		// Setting text of element P with id gfg
+		$("#gfg").html(data.ip);
+	})
+	</script>
+</head>
+
+<body>
+	<center>
+		<p id="gfg"></p>
+
+	</center>
+</body>
+
 </html>
